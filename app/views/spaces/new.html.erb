@@ -1,9 +1,13 @@
-<%= simple_form_for @space do |f| %>
-  <%= f.input :address %>
-  <%= f.input :city %>
-  <%= f.input :postcode %>
-  <%= f.input :number_of_people %>
-  <%= f.input :daily_price %>
-  <%= f.input :description %>
-  <%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
+<h2 class="m-t-10 m-l-15">List a Space</h2>
+
+<div class="form-container">
+  <%= simple_form_for @space do |f| %>
+    <%= f.input :address %>
+    <%= f.input :city %>
+    <%= f.input :postcode %>
+    <%= f.input :number_of_people %>
+    <%= f.input :daily_price %>
+    <%= f.input :description %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>
