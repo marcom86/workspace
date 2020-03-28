@@ -1,5 +1,39 @@
 // Specific CSS for your home-page
 .banner {
-  height: 275px;
-  background-color: #8cf2c4;
+  position: relative;
+  height: 100vh;
+  background-image: url('banner.png');
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+.search-form {
+  position:absolute;
+  left: 40px;
+  bottom: 100px;
+  background-color: white;
+  border-radius: $border-radius;
+  width: 400px;
+}
+
+.search-form h1 {
+  font-weight: bold;
+  padding: 20px;
+}
+
+.p-l-20 {
+  padding-left: 20px;
+}
+
+.p-r-20 {
+  padding-right: 20px;
+}
+
+.m-b-25 {
+  margin-bottom: 25px;
+}
+
+.m-t-50 {
+  margin-top: 50px;
 }
