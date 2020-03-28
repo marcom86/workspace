@@ -9,8 +9,11 @@ class SpacesController < ApplicationController
 
   def create
     @space = Space.new(space_params)
-    @space.save!
-    redirect_to spaces_path(@space)
+    if @space.save
+      redirect_to spaces_path(@space)
+    else
+      render :new
+    end
   end
 
   private
