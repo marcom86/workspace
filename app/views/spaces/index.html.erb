@@ -6,7 +6,8 @@
     <div class="card mb-3" style="max-width: 540px;">
       <div class="row no-gutters">
         <div class="col-md-4">
-          <img src="..." class="card-img" alt="...">
+          <!-- <img src="..." class="card-img" alt="..."> -->
+          <%= cl_image_tag space.photo.key, class: "card-img" %>
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -19,8 +20,5 @@
     </div>
   <% end %>
 </div>
-
-<img id="map" src='https://api.mapbox.com/[...]?access_token=YOUR-TOKEN-HERE'>
-
 
 </div>

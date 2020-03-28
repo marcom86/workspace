@@ -1,6 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "Workspace", root_path, class: "navbar-brand" %>
 
+  <input type="search" class="form-control ds-input searchbar bg-light" id="search-input" placeholder= "Search..." aria-label="Search for..." autocomplete="off" data-docs-version="4.4" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;">
+
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -10,7 +12,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item">
+        <li class="nav-item m-l-30">
           <%= link_to "About", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
