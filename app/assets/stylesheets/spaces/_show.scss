@@ -1,0 +1,51 @@
+.container-show {
+  width: 100%;
+  height: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.reservation-form {
+  background-color: $light-gray;
+  border: 1px solid #c4c4c4;
+  width: 400px;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+hr {
+  border-top: 1px solid #c4c4c4;
+}
+
+.booking-details p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.m-b-30 {
+  margin-bottom: 30px;
+}
+
+.m-t-20 {
+  margin-top: 20px;
+}
+
+.m-t-30 {
+  margin-top: 30px;
+}
+
+.p-l-20 {
+  padding-left: 20px;
+}
+
+.p-r-20 {
+  padding-right: 20px;
+}
+
+
+
+
