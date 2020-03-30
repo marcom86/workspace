@@ -22,7 +22,7 @@ class SpacesController < ApplicationController
   def create
     @space = Space.new(space_params)
     if @space.save
-      redirect_to spaces_path(@space)
+      redirect_to space_path(@space)
     else
       render :new
     end

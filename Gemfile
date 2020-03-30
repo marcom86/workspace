@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+gem 'carrierwave', '~> 2.0'
 gem 'cloudinary', '~> 1.12.0'
 gem 'geocoder'
 

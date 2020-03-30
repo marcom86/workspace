@@ -6,7 +6,7 @@ class Space < ApplicationRecord
   validates :daily_price, presence: true, numericality: true
   validates :description, presence: true
 
-  has_one_attached :photo
+  mount_uploader :photo, PhotoUploader
   # delete all the bookings when a space is deleted
   has_many :bookings, dependent: :destroy
 
