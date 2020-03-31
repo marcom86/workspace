@@ -1,30 +1,31 @@
 <div class="main-container">
 
+  <div class="row">
 
-  <div class="cards">
-    <% @spaces.each do |space| %>
-    <div class="card mb-3" style="max-width: 540px;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <%= cl_image_tag space.photo, class: "card-img" %>
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title"><%= space.address %></h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <%= link_to "details", space_path(space) %>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 cards">
+      <% @spaces.each do |space| %>
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <%= cl_image_tag space.photo, class: "card-img" %>
+          </div>
+
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><%= space.address %></h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><%= link_to "details", space_path(space) %></p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
           </div>
         </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
-  </div>
 
-  <div id="map"
-     style="width: 100%;
-     height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div class="d-none d-lg-block col-lg-5" id="map" data-markers="<%=
+    @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+  </div>
 
 </div>
