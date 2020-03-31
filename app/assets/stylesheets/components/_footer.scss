@@ -2,6 +2,10 @@
   background-color: #F4F4F4;
 }
 
+.footer p {
+  margin-bottom: 5px;
+}
+
 .footer h5, p, i {
   color: #707070;
 }
@@ -26,10 +30,24 @@
   padding-left: 15px;
 }
 
+.m-l-15  {
+  margin-left: 15px;
+}
+
 .bold {
   font-weight: bold;
+  margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 .footer-links {
   font-size: 25px;
+  justify-content: space-between;
+  width: 200px;
+  margin-top: 16px;
+  float: right;
+}
+
+.footer-copyright {
+  margin-top: 16px;
 }
