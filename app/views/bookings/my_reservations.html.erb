@@ -1,4 +1,23 @@
-<% @bookings.each do |booking| %>
-  <%= booking.check_in %>
-  <%= booking.check_out %>
-<% end %>
+<h2 class="m-l-15 m-t-10">Your Bookings</h1>
+
+<div class="my-bookings-container">
+
+  <% @bookings.each do |booking| %>
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="<%= Space.find(booking.space_id).photo %>" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+
+            <p class="card-text">Check-in: <strong><%= booking.check_in %></strong>  Check-out: <strong><%= booking.check_out %></strong></p>
+            <h5 class="card-title"><%= Space.find(booking.space_id).address %></h5>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div>
