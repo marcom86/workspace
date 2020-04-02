@@ -12,7 +12,7 @@ class Booking < ApplicationRecord
 
   def validate_check_out_greater_check_in
     is_greater = check_in > check_out
-    # errors.add(:greaten_than_check_in) if is_greater
+    errors.add(:greaten_than_check_in) if is_greater
   end
 
   def validate_other_booking_overlap
@@ -20,6 +20,6 @@ class Booking < ApplicationRecord
     is_overlapping = other_bookings.any? do |other_booking|
       period.overlaps?(other_booking.period)
     end
-    # errors.add(:overlaps_with_other) if is_overlapping
+    errors.add(:overlaps_with_other) if is_overlapping
   end
 end
