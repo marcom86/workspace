@@ -1,6 +1,5 @@
 // Specific CSS for your home-page
 .banner {
-  position: relative;
   height: 100vh;
   background-image: url("https://res.cloudinary.com/marc7/image/upload/v1585591922/cool-offices-top-7_vovk8a.jpg");
   background-position:center;
@@ -9,12 +8,11 @@
 }
 
 .search-form {
-  position:absolute;
-  left: 40px;
-  bottom: 100px;
   background-color: white;
   border-radius: $border-radius;
-  width: 400px;
+  margin-top:80px;
+  margin-left: 30px;
+  max-width: 400px;
 }
 
 .search-form h1 {
@@ -30,10 +28,10 @@
   padding-right: 20px;
 }
 
-.m-b-25 {
-  margin-bottom: 25px;
+.p-b-25 {
+  padding-bottom: 25px;
 }
 
-.m-t-50 {
-  margin-top: 50px;
+.m-t-25 {
+  margin-top: 25px;
 }
