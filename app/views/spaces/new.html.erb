@@ -1,6 +1,9 @@
 <h2 class="m-t-10 m-l-15">List a Space</h2>
 
-<div class="form-container m-b-50">
+<div class="page-wrapper">
+
+
+  <div class="page-content">
   <%= simple_form_for @space do |f| %>
     <%= f.input :address, error: "address can't be blank" %>
     <%= f.input :city, error: "city can't be blank" %>
@@ -9,6 +12,8 @@
     <%= f.input :daily_price, error: "daily price can't be blank" %>
     <%= f.input :description, error: "description can't be blank" %>
     <%= f.input :photo, as: :file %>
-    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= f.button :submit, class: "btn btn-primary btn-lg btn-block m-b-15" %>
   <% end %>
+</div>
+
 </div>
