@@ -9,8 +9,11 @@ class BookingsController < ApplicationController
     @booking.user = @user
     @space = Space.find(params[:space_id])
     @booking.space = @space
-    @booking.save!
-    redirect_to space_path(@space)
+    if @booking.save
+      redirect_to space_path(@space)
+    else
+      render 'spaces/show'
+    end
   end
 
   def my_reservations
