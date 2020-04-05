@@ -5,6 +5,13 @@ class Booking < ApplicationRecord
   validate :validate_check_out_greater_check_in
   validate :validate_other_booking_overlap
 
+  scope :overlapping, ->(from, to) {
+    where(
+      "(check_in, check_out) OVERLAPS (?, ?)", from, to
+    )
+  }
+
+
   def period
     check_in..check_out
   end

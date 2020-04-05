@@ -4,6 +4,15 @@ class SpacesController < ApplicationController
   def index
     @spaces = Space.geocoded
 
+    if params[:query1].present? && params[:query2].present?
+      from = DateTime.parse(params[:query1])
+      to = DateTime.parse(params[:query2])
+
+      @spaces = @spaces.where.not(
+      id: Booking.select(:space_id).overlapping(from, to)
+      ).geocoded
+
+    end
     @markers = @spaces.map do |space|
       {
         lat: space.latitude,

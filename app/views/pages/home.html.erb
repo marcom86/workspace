@@ -6,7 +6,7 @@
 
       <div class="search-form">
         <h1>Workspaces on-demand.</h1>
-
+<!--
         <form class=" p-l-20 p-r-20">
           <div class="form-group">
             <label for="inputCheckIn">Check-in</label>
@@ -19,7 +19,29 @@
           <div class="p-b-25">
           <button type="submit" class="btn btn-primary btn-lg btn-block m-t-25">Search</button>
           </div>
-        </form>
+        </form> -->
+
+
+        <%= form_tag spaces_path, method: :get do %>
+        <%= label_tag :query1, "Check in" %>
+        <%= date_field_tag :query1,
+        params[:query1],
+        class: "form-control" %>
+        <%= label_tag :query2, "Check out", class: "m-t-25" %>
+        <%= date_field_tag :query2,
+        params[:query2],
+        class: "form-control" %>
+        <%= submit_tag "Search", class: "btn btn-primary btn-lg btn-block m-t-25" %>
+        <% end %>
+
+
+
+
+
+
+
+
+
 
       </div>
 
