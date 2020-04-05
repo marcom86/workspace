@@ -17,3 +17,12 @@
   height:100%;
   background-size: cover;
 }
+
+.details {
+  color: $gray;
+
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
