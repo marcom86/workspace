@@ -3,6 +3,34 @@
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
+  text-align: left;
   font-family: 'Open Sans', sans-serif;
+  padding: 0px !important;
+  border-radius: 5px !important;
+  box-shadow: rgba(0, 0, 0, 0.28) 0px 8px 28px !important;
+}
+
+
+.info-window-img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 150px;
+  width: 100%;
+  margin: 0;
+}
+
+.info-window-details {
+  padding: 16px;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.align-items-center p {
+  margin: 0px;
 }
