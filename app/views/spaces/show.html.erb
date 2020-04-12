@@ -38,12 +38,10 @@
     <p><%= @space.description %></p>
     <p class="m-t-20"><%= @space.address %>, <%= @space.city %>, <%= @space.postcode %></p>
     <p class=" bold m-t-20"><%= @space.number_of_people %> People</p>
-    <p class="bold m-t-20 m-b-30">Daily price: £<%= @space.daily_price %></p>
+    <p class="bold m-t-20 m-b-30">Daily price: <%= humanized_money_with_symbol(@space.price) %></p>
   </div>
 
 </div>
-
-
 
 
 

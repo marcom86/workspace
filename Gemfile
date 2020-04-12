@@ -18,6 +18,7 @@ gem 'devise'
 gem 'carrierwave', '~> 2.0'
 gem 'cloudinary', '~> 1.12.0'
 gem 'geocoder'
+gem 'money-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

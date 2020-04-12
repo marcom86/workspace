@@ -3,10 +3,12 @@ class Space < ApplicationRecord
   validates :city, presence: true
   validates :postcode, presence: true
   validates :number_of_people, presence: true, numericality: { only_integer: true }
-  validates :daily_price, presence: true, numericality: true
+  validates :price, presence: true, numericality: true
   validates :description, presence: true
+  monetize :price_cents
 
   mount_uploader :photo, PhotoUploader
+
   # delete all the bookings when a space is deleted
   has_many :bookings, dependent: :destroy
 
