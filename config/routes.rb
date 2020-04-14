@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  resources :bookings do
+    collection do
+      get :my_bookings
+    end
+  end
+
   resources :spaces, only: [:index, :new, :create, :show] do
     resources :bookings, only: [:index, :new, :create, :show]
   end
 
   resources :bookings do
     resources :payments, only: :new
-  end
-
-  resources :bookings do
-    collection do
-      get :my_reservations
-    end
   end
 
   root to: 'pages#home'

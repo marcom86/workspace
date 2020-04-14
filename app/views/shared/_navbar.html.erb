@@ -17,7 +17,7 @@
           <%= link_to "List with Us", new_space_path, class: "nav-link" %>
         </li>
           <li class="nav-item">
-          <%= link_to "Your Booking", my_reservations_bookings_path, class: "nav-link d-block d-sm-none" %>
+          <%= link_to "Your Booking", my_bookings_bookings_path, class: "nav-link d-block d-sm-none" %>
         </li>
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link d-block d-sm-none" %>
@@ -28,7 +28,7 @@
           </a>
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Your Bookings", my_reservations_bookings_path, class: "dropdown-item light-grey" %>
+            <%= link_to "Your Bookings", my_bookings_bookings_path, class: "dropdown-item light-grey" %>
             <%= link_to "Another action", "#", class: "dropdown-item light-grey" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item light-grey" %>
           </div>
