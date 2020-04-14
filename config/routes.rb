@@ -1,19 +1,27 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :bookings do
-    collection do
-      get :my_bookings
-    end
+  # resources :spaces, only: [:index, :new, :create, :show] do
+  #   resources :bookings, only: [:index, :new, :create, :show]
+  # end
+
+  # resources :bookings do
+  #   resources :payments, only: :new
+  # end
+
+  resource :user, only: [] do
+    # this will route /user/bookings to Users::BookingsController
+    resources :bookings, only: [:index], module: :users
   end
 
   resources :spaces, only: [:index, :new, :create, :show] do
-    resources :bookings, only: [:index, :new, :create, :show]
+    # shallow: true will prevent the member routes from being nested
+    # it will also prevent resources :payments from being nested in `/spaces/`
+    resources :bookings, shallow: true do
+       resources :payments, only: :new, shallow: true
+    end
   end
 
-  resources :bookings do
-    resources :payments, only: :new
-  end
 
   root to: 'pages#home'
   get 'about', to: 'pages#about'

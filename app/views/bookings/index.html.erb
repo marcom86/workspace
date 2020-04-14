@@ -1,0 +1,17 @@
+<% @bookings.reverse.each do |booking| %>
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <img src="<%= booking.space.photo %>" class="card-img" alt="...">
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <div class="card-body">
+
+            <p class="card-text">Check-in: <strong><%= booking.check_in %></strong>  Check-out: <strong><%= booking.check_out %></strong></p>
+            <h5 class="card-title"><%= booking.space.address %></h5>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
