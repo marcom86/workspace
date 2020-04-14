@@ -5,7 +5,7 @@
   <p><%= space.city %></p>
   <div class="flex space-between align-items-center">
   <p><%= space.postcode %></p>
-  <p>£ <%= humanized_money_with_symbol(space.price) %></p>
+  <p><%= humanized_money_with_symbol(space.price) %></p>
   </div>
   <a href="/spaces/<%= space.id %>" class="stretched-link"></a>
 </div>

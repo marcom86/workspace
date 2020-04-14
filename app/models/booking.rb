@@ -1,6 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :space
+  monetize :amount_cents
   validate :validate_today_greater_check_in
   validate :validate_check_out_greater_check_in
   validate :validate_other_booking_overlap
