@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
         images: [@space.photo],
         amount: @space.price_cents,
         currency: 'gbp',
-        quantity: 1
+        quantity: 1 + (booking.check_out - booking.check_in).to_i
       }],
       success_url: booking_url(booking),
       cancel_url: booking_url(booking)

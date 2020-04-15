@@ -6,6 +6,8 @@
       <ul class="list-unstyled">
         <li><strong>ISSUED ON</strong> <%= @booking.created_at.to_date %></li>
         <li><strong>SPACE</strong> <%= @booking.space.address %> </li>
+        <li><strong>FROM</strong> <%= @booking.check_in %> <strong>TO</strong> <%= @booking.check_out %> </li>
+        <li><strong>DAY(S)</strong> <%= 1 + (@booking.check_out - @booking.check_in).to_i %> </li>
         <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @booking.amount %></li>
         </li>
       </ul>
