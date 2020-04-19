@@ -3,6 +3,8 @@ class SpacesController < ApplicationController
 
   def index
     @spaces = Space.geocoded
+    session[:query1] = params[:query1]
+    session[:query2] = params[:query2]
 
     if params[:query1].present? && params[:query2].present?
       from = DateTime.parse(params[:query1])
@@ -25,6 +27,8 @@ class SpacesController < ApplicationController
   def show
     @space = Space.find(params[:id])
     @booking = Booking.new
+    @query1 = session[:query1]
+    @query2 = session[:query2]
   end
 
   def new
