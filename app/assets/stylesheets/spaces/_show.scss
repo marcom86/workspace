@@ -19,6 +19,7 @@
   background-size: cover;
   display: table;
   margin: 0 auto;
+  border-radius: 5px;
 }
 
 
@@ -29,6 +30,7 @@
 .reservation-form {
   background-color: $light-gray;
   border: 1px solid #c4c4c4;
+  border-radius: 5px;
   min-width: 300px;
   width: 100%;
   display: table;
@@ -42,12 +44,6 @@
 .align-items-center {
   align-items: center;
  }
-
-hr {
-  margin-top: 6px;
-  margin-bottom: 12px;
-  border-bottom: 1px solid #c4c4c4;
-}
 
 .booking-details p {
   margin-top: 0px;

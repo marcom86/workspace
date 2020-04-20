@@ -16,24 +16,6 @@
         <%= f.date_field :check_in, value: @query1, class: "form-control" %>
         <%= label_tag :check_out, "Check out", class: "m-t-25" %>
         <%= f.date_field :check_out, value: @query2, class: "form-control" %>
-
-        <div class="reservation-details m-t-30">
-          <div class="reservation-details-days flex space-between align-items-center p-l-5 p-r-5">
-            <p><%= humanized_money_with_symbol(@space.price) %> x 10 days</p>
-            <p>£1320</p>
-          </div>
-          <hr>
-          <div class="reservation-details-fee flex space-between align-items-center p-l-5 p-r-5">
-            <p>Service fee</p>
-            <p>£66</p>
-          </div>
-          <hr>
-          <div class="reservation-details-total flex space-between align-items-center p-l-5 p-r-5">
-            <strong><p>Total</p></strong>
-            <strong><p>£1386</p></strong>
-          </div>
-        </div>
-
         <%= submit_tag "Reserve", class: "btn btn-primary btn-lg btn-block m-t-20 m-b-30" %>
         <% end %>
 

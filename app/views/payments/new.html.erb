@@ -1,13 +1,53 @@
+<div id="checkout-stage" class="flex p-l-26">
+  <h6 class="bold m-r-10">1. Checkout Summary</h6>
+  <h6> > </h6>
+  <h6 class="m-l-10 m-r-10">2. Booking Payment </h6>
+  <h6> > </h6>
+  <h6 class="m-l-10">3. Booking Confirmation</h6>
+</div>
 <div class="container">
-  <div class="row py-4">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+      <h2>Checkout Summary</h2>
 
-  <div class="col-md-3"><%= cl_image_tag @booking.space.photo, width: '100%' %></div>
+      <div class="space-rules">
+        <h6 class="bold">Review Space Rules</h6>
+      </div>
 
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Booking of <strong><%= @booking.space.address %></strong> for <strong><%= humanized_money_with_symbol @booking.amount %></strong></p>
-      <p><%= 1 + (@booking.check_out - @booking.check_in).to_i %><p>
-      <button id="pay" class="btn btn-primary">Pay</button>
+      <hr>
+
+      <h6 class="bold">Things to keep in mind</h6>
+      <div class="flex align-items-center m-t-20">
+        <img src="https://img.icons8.com/ultraviolet/40/000000/children.png"/>
+        <p class="m-l-20">Children friendly (2-12 years)</p>
+      </div>
+      <div class="flex align-items-center m-t-20">
+        <img src="https://img.icons8.com/office/40/000000/no-animals.png"/>
+        <p class="m-l-20">No pets</p>
+      </div>
+      <div class="flex align-items-center m-t-20">
+        <img src="https://img.icons8.com/office/40/000000/no-smoking.png"/>
+        <p class="m-l-20">No smoking</p>
+      </div>
+      <div class="flex align-items-center m-t-20">
+        <img src="https://img.icons8.com/ultraviolet/40/000000/elevator.png"/>
+        <p class="m-l-20">Elevator</p>
+      </div>
+
+
+      <div class="Additional Informations m-t-20">
+        <a href="#" class="show_hide" data-content="toggle-text">Read More</a>
+        <div class="content">
+          <h6 class="bold m-t-20">Additional information</h6>
+          <p>The host reserve the right to claim part or all of the Security Deposit to cover any additional charges including:</p>
+          <ul>
+            <li> extra cleaning (£50)</li>
+            <li>unauthorized late check-out (£50)</li>
+          </ul>
+        </div>
+      </div>
+
+      <button id="pay" class="btn btn-primary m-t-60 m-b-60">Proceed to Payment</button>
 
       <script src="https://js.stripe.com/v3/"></script>
       <script>
@@ -20,5 +60,44 @@
         });
       </script>
     </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+      <div class="summary-details">
+        <div class="p-20">
+          <div class="row">
+            <h6 class="col-md-6 bold"><%= @booking.space.address %></h6>
+            <div class="col-md-6"><%= cl_image_tag @booking.space.photo, width: '100%' %></div>
+          </div>
+          <hr>
+          <div class="flex align-items-center p-l-5 p-r-5">
+            <i class="far fa-calendar"></i>
+            <p class="m-l-10"> <%= @booking.check_in.strftime("%b %d, %Y") %></p>
+            <i class="fas fa-arrow-right m-l-10"></i>
+            <p class="m-l-10"> <%= @booking.check_out.strftime("%b %d, %Y") %></p>
+          </div>
+          <hr>
+          <div class="flex space-between align-items-center p-l-5 p-r-5">
+            <p>£ <%=@booking.space.price %> x <%= @days %> days</p>
+            <p>£ <%= @booking.space.price *  @days %></p>
+          </div>
+          <div class="flex space-between align-items-center p-l-5 p-r-5">
+            <p>Service fee</p>
+            <p class="m-t-20">£ <%= @service_fee %></p>
+          </div>
+          <hr>
+          <div class="flex space-between align-items-center p-l-5 p-r-5">
+            <strong><p>Total</p></strong>
+            <strong><p>£ <%= @total_price %></p></strong>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+
+
+
+
+
+
+

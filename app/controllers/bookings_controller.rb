@@ -7,13 +7,6 @@ class BookingsController < ApplicationController
     @space = Space.find(params[:space_id])
     booking  = Booking.create!(booking_params)
 
-    # booking.update(
-      #   state: 'pending',
-      #   amount: space.price,
-      #   user: current_user,
-      #   space: space
-      #   )
-
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
@@ -35,22 +28,6 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.find(params[:id])
   end
 
-  # def create
-  #   @booking = Booking.new(booking_params)
-  #   @user = current_user
-  #   @booking.user = @user
-  #   @space = Space.find(params[:space_id])
-  #   @booking.space = @space
-  #   if @booking.save
-  #     redirect_to space_path(@space)
-  #   else
-  #     render 'spaces/show'
-  #   end
-  # end
-
-  def my_bookings
-    @my_bookings = current_user.bookings
-  end
 
   private
 
