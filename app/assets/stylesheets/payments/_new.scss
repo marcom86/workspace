@@ -30,6 +30,33 @@
   font-weight: bold;
 }
 
+.dates p {
+ margin: 0px;
+ text-align: center;
+}
+
+.check-in-times p {
+  margin: 0px;
+  text-align: left;
+}
+
+.dates {
+  background-color: #F2F2F2;
+  height: 65px;
+  width: 65px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-in-times {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 hr {
   border-bottom: 1px solid #c4c4c4;
 }
@@ -56,6 +83,14 @@ hr {
 
 .m-b-60 {
   margin-bottom: 60px;
+}
+
+.m-b-30 {
+  margin-bottom: 30px;
+}
+
+.m-t-30 {
+  margin-top: 30px;
 }
 
 

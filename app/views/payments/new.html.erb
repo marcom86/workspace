@@ -8,15 +8,42 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
-      <h2>Checkout Summary</h2>
+      <h2 class="m-b-60">Checkout Summary</h2>
 
-      <div class="space-rules">
-        <h6 class="bold">Review Space Rules</h6>
+      <div class="booking-dates flex space-between m-b-30">
+        <div class="check-in-details flex ">
+          <div class="dates m-r-10">
+            <div>
+              <p><%= @booking.check_in.strftime(" %b").upcase %></p>
+              <p><%= @booking.check_in.strftime(" %e") %></p>
+            </div>
+          </div>
+          <div class="check-in-times ">
+            <div>
+              <p><%= @booking.check_in.strftime(" %A") %> check-in</p>
+              <p>After 8:00 AM</p>
+            </div>
+          </div>
+        </div>
+         <div class="check-out-details flex ">
+          <div class="dates m-r-10">
+            <div>
+              <p><%= @booking.check_out.strftime(" %b").upcase %></p>
+              <p><%= @booking.check_out.strftime(" %e") %></p>
+            </div>
+          </div>
+          <div class="check-in-times">
+            <div>
+              <p><%= @booking.check_out.strftime(" %A") %> check-out</p>
+              <p>Before 22:00 PM</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <hr>
 
-      <h6 class="bold">Things to keep in mind</h6>
+      <h6 class="bold m-t-30 m-b-30">Things to keep in mind</h6>
       <div class="flex align-items-center m-t-20">
         <img src="https://img.icons8.com/ultraviolet/40/000000/children.png"/>
         <p class="m-l-20">Children friendly (2-12 years)</p>
