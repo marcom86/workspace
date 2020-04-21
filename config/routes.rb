@@ -18,7 +18,11 @@ Rails.application.routes.draw do
     # shallow: true will prevent the member routes from being nested
     # it will also prevent resources :payments from being nested in `/spaces/`
     resources :bookings, shallow: true do
-       resources :payments, only: :new, shallow: true
+      resources :payments, only: :new, shallow: true do
+        collection do
+         get :success
+        end
+      end
     end
   end
 

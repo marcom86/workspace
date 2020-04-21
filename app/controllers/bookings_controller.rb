@@ -16,8 +16,9 @@ class BookingsController < ApplicationController
         currency: 'gbp',
         quantity: 1 + (booking.check_out - booking.check_in).to_i
       }],
-      success_url: booking_url(booking),
-      cancel_url: booking_url(booking)
+      # success_url: "http://localhost:3000/bookings/#{booking.id}/payments/success?session_id={CHECKOUT_SESSION_ID}",
+      success_url: success_booking_payments_url(booking),
+      cancel_url: new_booking_payment_url(booking) #delete booking
       )
 
     booking.update_attribute(:checkout_session_id, session.id)
@@ -26,6 +27,13 @@ class BookingsController < ApplicationController
 
   def show
     @booking = current_user.bookings.find(params[:id])
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @Booking.destroy
+
+    redirect_to root
   end
 
 
