@@ -12,9 +12,9 @@ class BookingsController < ApplicationController
       line_items: [{
         name: @space.address,
         images: [@space.photo],
-        amount: @space.price_cents,
+        amount: @space.price_cents * (booking.check_out - booking.check_in).to_i,
         currency: 'gbp',
-        quantity: 1 + (booking.check_out - booking.check_in).to_i
+        quantity: 1
       }],
       # success_url: "http://localhost:3000/bookings/#{booking.id}/payments/success?session_id={CHECKOUT_SESSION_ID}",
       success_url: success_booking_payments_url(booking),
