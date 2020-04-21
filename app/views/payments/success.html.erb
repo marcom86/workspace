@@ -59,7 +59,7 @@
           <hr>
           <div class="flex space-between align-items-center p-l-5 p-r-5">
             <p>£ <%=@booking.space.price %> x <%= @days %> days</p>
-            <p>£ <%= @booking.space.price * 1 %></p>
+            <p>£ <%= @booking.space.price *  @days %></p>
           </div>
           <div class="flex space-between align-items-center p-l-5 p-r-5">
             <p>Service fee</p>
