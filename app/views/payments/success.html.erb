@@ -1,5 +1,80 @@
-<h2>Thank you for your booking</h2>
-  <p><%= @booking.space.address %></p>
-  <p><%= @booking.id %></p>
+<div id="checkout-stage" class="flex p-l-26">
+  <h6 class="bold m-r-10">1. Checkout Summary</h6>
+  <h6> > </h6>
+  <h6 class="bold m-l-10 m-r-10">2. Booking Payment </h6>
+  <h6> > </h6>
+  <h6 class="bold m-l-10">3. Booking Confirmation</h6>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+      <h2 class="m-b-60">Thank you for booking with Workspace</h2>
+
+      <div class="booking-dates flex space-between m-b-30">
+        <div class="check-in-details flex ">
+          <div class="dates m-r-10">
+            <div>
+              <p><%= @booking.check_in.strftime(" %b").upcase %></p>
+              <p><%= @booking.check_in.strftime(" %e") %></p>
+            </div>
+          </div>
+          <div class="check-in-times ">
+            <div>
+              <p><%= @booking.check_in.strftime(" %A") %> check-in</p>
+              <p>After 8:00 AM</p>
+            </div>
+          </div>
+        </div>
+         <div class="check-out-details flex ">
+          <div class="dates m-r-10">
+            <div>
+              <p><%= @booking.check_out.strftime(" %b").upcase %></p>
+              <p><%= @booking.check_out.strftime(" %e") %></p>
+            </div>
+          </div>
+          <div class="check-in-times">
+            <div>
+              <p><%= @booking.check_out.strftime(" %A") %> check-out</p>
+              <p>Before 22:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+       <%= cl_image_tag @booking.space.photo, width: '100%', class: "m-t-30 m-b-60" %>
+
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+      <div class="summary-details">
+        <div class="p-20">
+            <h6 class="bold"><%= @booking.space.address %></h6>
+          <hr>
+          <div class="flex align-items-center p-l-5 p-r-5">
+            <i class="far fa-calendar"></i>
+            <p class="m-l-10"> <%= @booking.check_in.strftime("%b %d, %Y") %></p>
+            <i class="fas fa-arrow-right m-l-10"></i>
+            <p class="m-l-10"> <%= @booking.check_out.strftime("%b %d, %Y") %></p>
+          </div>
+          <hr>
+          <div class="flex space-between align-items-center p-l-5 p-r-5">
+            <p>£ <%=@booking.space.price %> x <%= @days %> days</p>
+            <p>£ <%= @booking.space.price * 1 %></p>
+          </div>
+          <div class="flex space-between align-items-center p-l-5 p-r-5">
+            <p>Service fee</p>
+            <p class="m-t-20">£ <%= @service_fee %></p>
+          </div>
+          <hr>
+          <div class="flex space-between align-items-center p-l-5 p-r-5">
+            <strong><p>Total</p></strong>
+            <strong><p>£ <%= @total_price %></p></strong>
+          </div>
+        </div>
+      </div>
+      <%= link_to "Return to Workspace", root_path, class: "btn btn-success btn-lg btn-block m-t-10" %>
+    </div>
+  </div>
+</div>
 
 
