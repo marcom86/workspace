@@ -25,7 +25,12 @@
 
   </div>
   <div class="scroll">
-    <a  id="link-tutorial" href="#"> <i class="fas fa-chevron-circle-down"></i></i></a>
+    <a  id="link-tutorial" href="#">
+      <span class="fa-stack fa-2x">
+        <i class="fas fa-circle fa-stack-2x white"></i>
+        <i class="fas fa-chevron-circle-down fa-stack-2x blue"></i>
+      </span>
+    </a>
   </div>
 
 </div>
@@ -41,12 +46,12 @@
     <div class="col-xl-4 step">
       <%= image_tag "pay.png", class: "img-tutorial" %>
       <h6 class="bold">Pay Online</h6>
-       <p>Secure Payment with Stripe</p>
+      <p>Secure Payment with Stripe</p>
     </div>
     <div class="col-xl-4 step">
       <%= image_tag "password.png", class: "img-tutorial" %>
       <h6 class="bold">Self Check-in</h6>
-       <p>Check yourself in with a password</p>
+      <p>Check yourself in with a password</p>
     </div>
   </div>
 </div>
