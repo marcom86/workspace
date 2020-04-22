@@ -25,7 +25,7 @@
             </div>
           </div>
         </div>
-         <div class="check-out-details flex ">
+        <div class="check-out-details flex ">
           <div class="dates m-r-10">
             <div>
               <p><%= @booking.check_out.strftime(" %b").upcase %></p>
@@ -62,27 +62,14 @@
       </div>
 
       <hr>
-
-      <h6 class="bold m-t-30">Additional information</h6>
-      <p>The host reserve the right to claim part or all of the Security Deposit to cover any additional charges including:</p>
-      <ul>
-        <li> extra cleaning (£50)</li>
-        <li>unauthorized late check-out (£50)</li>
-      </ul>
-
-
-      <button id="pay" class="btn btn-primary btn-lg m-t-60 m-b-60">Proceed to Payment</button>
-
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @booking.checkout_session_id %>'
-          });
-        });
-      </script>
+      <div class="m-b-60">
+        <h6 class="bold m-t-30">Additional information</h6>
+        <p>The host reserve the right to claim part or all of the Security Deposit to cover any additional charges including:</p>
+        <ul>
+          <li> extra cleaning (£50)</li>
+          <li>unauthorized late check-out (£50)</li>
+        </ul>
+      </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
       <div class="summary-details">
@@ -112,6 +99,18 @@
             <strong><p>Total</p></strong>
             <strong><p>£ <%= @total_price %></p></strong>
           </div>
+          <button id="pay" class="btn btn-primary btn-lg btn-block m-t-30">Proceed to Payment</button>
+
+          <script src="https://js.stripe.com/v3/"></script>
+          <script>
+            const paymentButton = document.getElementById('pay');
+            paymentButton.addEventListener('click', () => {
+              const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+              stripe.redirectToCheckout({
+                sessionId: '<%= @booking.checkout_session_id %>'
+              });
+            });
+          </script>
         </div>
       </div>
     </div>
