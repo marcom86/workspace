@@ -24,16 +24,29 @@
     </div>
 
   </div>
+  <div class="scroll">
+    <a  id="link-tutorial" href="#"> <i class="fas fa-chevron-circle-down"></i></i></a>
+  </div>
 
 </div>
 
-<div class="">
+<div class="tutorial m-t-50 m-b-50">
+  <h2 class="bold m-b-15">Pay as you go</h2>
   <div class="row">
-    <div class="col-md-4">
-      <%= show_svg('dates.svg') %>
-      <h6>Choose the dates</h6>
+    <div class="col-xl-4 step">
+      <%= image_tag "dates.png", class: "img-tutorial" %>
+      <h6 class="bold">Choose the Dates</h6>
+      <p>Select the check-in and check-out dates</p>
     </div>
-    <div class="col-md-4">Ipsum</div>
-    <div class="col-md-4">Dolor</div>
+    <div class="col-xl-4 step">
+      <%= image_tag "pay.png", class: "img-tutorial" %>
+      <h6 class="bold">Pay Online</h6>
+       <p>Secure Payment with Stripe</p>
+    </div>
+    <div class="col-xl-4 step">
+      <%= image_tag "password.png", class: "img-tutorial" %>
+      <h6 class="bold">Self Check-in</h6>
+       <p>Check yourself in with a password</p>
+    </div>
   </div>
 </div>
