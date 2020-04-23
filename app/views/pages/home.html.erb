@@ -8,7 +8,9 @@
         <h1>Workspaces on-demand.</h1>
 
         <%= form_tag spaces_path, method: :get do %>
-        <%= label_tag :query1, "Check in" %>
+        <%= label_tag :location, "City"%>
+        <%= select_tag :location, options_for_select(["London", "Bath", "Brighton", "Bristol", "Cambridge" ]), class: "form-control" %>
+        <%= label_tag :query1, "Check in", class: "m-t-25" %>
         <%= date_field_tag :query1,
         params[:query1],
         class: "form-control" %>

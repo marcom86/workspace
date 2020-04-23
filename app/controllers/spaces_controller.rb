@@ -5,6 +5,11 @@ class SpacesController < ApplicationController
     @spaces = Space.geocoded
     session[:query1] = params[:query1]
     session[:query2] = params[:query2]
+    session[:location] = params[:location]
+
+    if params[:location].present?
+      @spaces = @spaces.where(city: params[:location])
+    end
 
     if params[:query1].present? && params[:query2].present?
       from = DateTime.parse(params[:query1])
@@ -15,6 +20,7 @@ class SpacesController < ApplicationController
       ).geocoded
 
     end
+
     @markers = @spaces.map do |space|
       {
         lat: space.latitude,

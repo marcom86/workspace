@@ -26,6 +26,18 @@ concert_hall_approach = Space.create(
   remote_photo_url: "https://res.cloudinary.com/marc7/image/upload/v1585520334/qwvl0ae2kut2llb04u7w3uo7qce2.jpg"
 )
 
+lincoln_inn_fields = Space.create(
+  address: "The Hetling Pump Room, Hot Bath St",
+  city: "Bath",
+  postcode: "BA11SJ",
+  number_of_people: 6,
+  price: 159,
+  description: "Lorem Ipsum dolore sic amet, beautiful space, bla bla bla",
+  latitude: 51.380500,
+  longitude: -2.361370,
+  remote_photo_url: "https://res.cloudinary.com/marc7/image/upload/v1585586583/transferwise-office-m-2_igh2wg.jpg"
+)
+
 bedford_st = Space.create(
   address: "1A Bedford St",
   city: "London",
