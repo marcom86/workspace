@@ -63,6 +63,20 @@
   grid-gap:16px;
 }
 
+@media(max-width: 992px) {
+  .cards-home {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .cards-home {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
 .text-align-center {
   text-align: center;
 }
