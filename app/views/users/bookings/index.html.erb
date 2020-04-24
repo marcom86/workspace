@@ -21,6 +21,10 @@
         </div>
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
           <div class="card-body">
+            <div class="card-state flex justify-content-space-between">
+              <h3>Booking #<%= booking.id %></h3>
+              <h5><span id="booking-badge" class="badge badge-warning"><%= booking.state %></span></h5>
+            </div>
 
             <p class="card-text">Check-in: <strong><%= booking.check_in %></strong>  Check-out: <strong><%= booking.check_out %></strong></p>
             <h5 class="card-title"><%= booking.space.address %></h5>
