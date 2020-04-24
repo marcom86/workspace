@@ -11,6 +11,10 @@
   font-size: 50px;
 }
 
+.postcode p {
+  margin: 0px;
+}
+
 .blue {
   color: $primary;
 }
@@ -63,12 +67,28 @@
   text-align: center;
 }
 
+.flex {
+  display: flex;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
 .bold {
   font-weight: bold;
 }
 
 .m-t-50 {
   margin-top: 50px;
+}
+
+.m-t-65 {
+  margin-top: 65px;
+}
+
+.m-t-20 {
+  margin-top: 20px;
 }
 
 .m-t-30 {

@@ -38,16 +38,29 @@
   </div>
 
   <script>
-    const badge = document.querySelector('.booking-badge');
 
-    const changeBadgeColor = () =>{
+    const changeBadgeColor = () => {
 
-      badge.classList.remove("badge-warning");
-      badge.classList.add("badge-success");
+      const badges = document.querySelectorAll('.booking-badge');
 
+      badges.forEach(function(badge) {
+        if(badge.innerHTML === "paid") {
+          badge.classList.remove("badge-warning");
+          badge.classList.add("badge-success");
+        }
+      })
     }
 
-    if(badge.innerHTML === "paid") {
-      changeBadgeColor()
-    }
+    changeBadgeColor();
+
   </script>
+
+
+
+
+
+
+
+
+
+

@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
       line_items: [{
         name: @space.address,
         images: [@space.photo],
-        amount: @space.price_cents * (booking.check_out - booking.check_in).to_i,
+        amount: @space.price_cents * (1 + (booking.check_out - booking.check_in).to_i),
         currency: 'gbp',
         quantity: 1
       }],
