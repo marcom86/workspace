@@ -48,9 +48,12 @@
           <div class="col-xs-8 col-sm-8 col-md-12 col-lg-7">
             <div class="card-body">
               <h5 class="card-title"><%= space.address %></h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><%= link_to "details", space_path(space), class: "stretched-link details" %></p>
-              <p class="card-text"><small class="text-muted"><p>Daily price: <%= humanized_money_with_symbol(space.price) %></p></small></p>
+              <p class="card-text"><%= space.description.split[0..25].join(' ') %>...</p>
+              <p class="card-text"><%= link_to "", space_path(space), class: "stretched-link details" %></p>
+              <div class="card-details flex justify-content-space-between">
+                <p class="card-text"><%= space.postcode %></p>
+                <p class="card-text">Daily price: <%= humanized_money_with_symbol(space.price) %></p>
+              </div>
             </div>
           </div>
         </div>

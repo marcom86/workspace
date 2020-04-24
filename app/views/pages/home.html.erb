@@ -64,126 +64,19 @@
 
   <div class="cards-home best-spaces m-b-50">
 
-    <div class="card">
-      <img src="<%= @spaces[0].photo %>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text bold"><%= @spaces[0].address %></p>
-        <div class="postcode flex justify-content-space-between">
-          <p><%= @spaces[0].postcode %></p>
-          <p><%= @spaces[0].city %></p>
+    <% @spaces[0..11].each do |space| %>
+      <div class="card">
+        <img src="<%= space.photo %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text bold"><%= space.address %></p>
+          <div class="postcode flex justify-content-space-between">
+            <p><%= space.postcode %></p>
+            <p><%= space.city %></p>
+          </div>
         </div>
+        <p class="card-text"><%= link_to "", space_path(space), class: "stretched-link details" %></p>
       </div>
-    </div>
-        <div class="card">
-      <img src="<%= @spaces[1].photo %>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text bold"><%= @spaces[1].address %></p>
-        <div class="flex justify-content-space-between">
-          <p><%= @spaces[1].postcode %></p>
-          <p><%= @spaces[1].city %></p>
-        </div>
-      </div>
-    </div>
-        <div class="card">
-      <img src="<%= @spaces[2].photo %>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text bold"><%= @spaces[2].address %></p>
-        <div class="flex justify-content-space-between">
-          <p><%= @spaces[2].postcode %></p>
-          <p><%= @spaces[2].city %></p>
-        </div>
-      </div>
-    </div>
-        <div class="card">
-      <img src="<%= @spaces[3].photo %>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text bold"><%= @spaces[3].address %></p>
-        <div class="flex justify-content-space-between">
-          <p><%= @spaces[3].postcode %></p>
-          <p><%= @spaces[3].city %></p>
-        </div>
-      </div>
-    </div>
-        <div class="card">
-      <img src="<%= @spaces[4].photo %>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text bold"><%= @spaces[4].address %></p>
-        <div class="flex justify-content-space-between">
-          <p><%= @spaces[4].postcode %></p>
-          <p><%= @spaces[4].city %></p>
-        </div>
-      </div>
-    </div>
-        <div class="card">
-      <img src="<%= @spaces[5].photo %>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text bold"><%= @spaces[5].address %></p>
-        <div class="flex justify-content-space-between">
-          <p><%= @spaces[5].postcode %></p>
-          <p><%= @spaces[5].city %></p>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="<%= @spaces[6].photo %>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text bold"><%= @spaces[6].address %></p>
-        <div class="flex justify-content-space-between">
-          <p><%= @spaces[6].postcode %></p>
-          <p><%= @spaces[6].city %></p>
-        </div>
-      </div>
-    </div>
-        <div class="card">
-      <img src="<%= @spaces[7].photo %>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text bold"><%= @spaces[7].address %></p>
-        <div class="flex justify-content-space-between">
-          <p><%= @spaces[7].postcode %></p>
-          <p><%= @spaces[7].city %></p>
-        </div>
-      </div>
-    </div>
-        <div class="card">
-      <img src="<%= @spaces[8].photo %>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text bold"><%= @spaces[8].address %></p>
-        <div class="flex justify-content-space-between">
-          <p><%= @spaces[8].postcode %></p>
-          <p><%= @spaces[8].city %></p>
-        </div>
-      </div>
-    </div>
-        <div class="card">
-      <img src="<%= @spaces[9].photo %>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text bold"><%= @spaces[9].address %></p>
-        <div class="flex justify-content-space-between">
-          <p><%= @spaces[9].postcode %></p>
-          <p><%= @spaces[9].city %></p>
-        </div>
-      </div>
-    </div>
-        <div class="card">
-      <img src="<%= @spaces[10].photo %>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text bold"><%= @spaces[10].address %></p>
-        <div class="flex justify-content-space-between">
-          <p><%= @spaces[10].postcode %></p>
-          <p><%= @spaces[10].city %></p>
-        </div>
-      </div>
-    </div>
-        <div class="card">
-      <img src="<%= @spaces[11].photo %>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text bold"><%= @spaces[11].address %></p>
-        <div class="flex justify-content-space-between">
-          <p><%= @spaces[11].postcode %></p>
-          <p><%= @spaces[11].city %></p>
-        </div>
-      </div>
-    </div>
+    <%end%>
 
   </div>
 </div>

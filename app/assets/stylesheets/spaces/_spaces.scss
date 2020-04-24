@@ -1,6 +1,13 @@
-.filters {
+.flex {
+  display: flex;
+}
 
+.justify-content-space-between {
+  justify-content: space-between;
+}
 
+.card-details p {
+  margin: 0px !important;
 }
 
 .m-l-26 {
