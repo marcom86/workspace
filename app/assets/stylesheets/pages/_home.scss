@@ -53,6 +53,16 @@
   padding-bottom: 10px;
 }
 
+.cards-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap:16px;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -66,7 +76,11 @@
 }
 
 .m-b-50 {
-  margin-bottom: 50px;
+  margin-bottom: 50px !important;
+}
+
+.m-b-100 {
+  margin-bottom: 100px !important;
 }
 
 .p-l-25 {

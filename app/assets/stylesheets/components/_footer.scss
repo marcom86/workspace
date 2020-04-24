@@ -18,6 +18,23 @@
   color: #707070;
 }
 
+.b5b5b5 {
+  color: #b5b5b5;
+}
+
+.footer-legal p {
+  color: #b5b5b5 !important;
+}
+
+.footer-links i {
+  color: #b5b5b5 !important;
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
 .p-t-30 {
   padding-top: 30px;
 }
