@@ -15,8 +15,10 @@ class SpacesController < ApplicationController
       from = DateTime.parse(params[:query1])
       to = DateTime.parse(params[:query2])
 
+
+
       @spaces = @spaces.where.not(
-      id: Booking.select(:space_id).overlapping(from, to)
+      id: Booking.where(state: 'paid').select(:space_id).overlapping(from, to)
       ).geocoded
 
     end
