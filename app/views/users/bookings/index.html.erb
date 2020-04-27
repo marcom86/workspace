@@ -1,38 +1,44 @@
-<h2 class="m-l-15 m-t-10">Your Bookings</h1>
+<h2 class="m-l-15 m-t-10 ">Your Bookings</h1>
 
   <div class="my-bookings-container">
 
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Order
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-      </div>
-    </div>
+    <% if @bookings.blank? %>
+    <h4>You have no bookings yet.</h4>
 
-    <% @bookings.reverse.each do |booking| %>
-    <div class="card mb-3">
-      <div class="row no-gutters">
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <img src="<%= booking.space.photo %>" class="card-img" alt="...">
+    <% else %>
+
+      <div class="dropdown m-b-20 m-r-20 text-align-right">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sort by
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <p> <%= link_to "ASC", sort: :asc %> </p>
+          <p> <%= link_to "DESC", sort: :desc %> </p>
+          <!-- <a class="dropdown-item" href="#">Booking Date: desc</a> -->
         </div>
-        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <div class="card-body">
-            <div class="card-state flex justify-content-space-between">
-              <h3>Booking #<%= booking.id %></h3>
-              <h5><span class="booking-badge badge badge-warning"><%= booking.state %></span></h5>
-            </div>
+      </div>
 
-            <p class="card-text">Check-in: <strong><%= booking.check_in %></strong>  Check-out: <strong><%= booking.check_out %></strong></p>
-            <h5 class="card-title"><%= booking.space.address %></h5>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <% @bookings.each do |booking| %>
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <img src="<%= booking.space.photo %>" class="card-img" alt="...">
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <div class="card-body">
+              <div class="card-state flex justify-content-space-between">
+                <h3>Booking #<%= booking.id %></h3>
+                <h5><span class="booking-badge badge badge-warning"><%= booking.state %></span></h5>
+              </div>
+
+              <p class="card-text">Check-in: <strong><%= booking.check_in %></strong>  Check-out: <strong><%= booking.check_out %></strong></p>
+              <h5 class="card-title"><%= booking.space.address %></h5>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <% end %>
     <% end %>
 
   </div>

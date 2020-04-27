@@ -17,16 +17,6 @@
         <%= label_tag :check_out, "Check out", class: "m-t-25" %>
         <%= f.date_field :check_out, value: @query2, class: "form-control" %>
 
-
-        <% if @booking.errors.any?
-          <ul>
-          <% @booking.errors.each do |error| %>
-          <li><%=error.full_messages%></li>
-          <% end %>
-        </ul>
-        <% end %>
-
-
         <%= submit_tag "Reserve", class: "btn btn-primary btn-lg btn-block m-t-20 m-b-30" %>
         <% end %>
 
