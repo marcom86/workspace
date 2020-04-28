@@ -46,8 +46,6 @@
 .search-form {
   background-color: white;
   border-radius: $border-radius;
-  margin-top:80px;
-  margin-left: 30px;
   max-width: 400px;
 }
 
@@ -55,6 +53,18 @@
   font-weight: bold;
   padding-top: 25px;
   padding-bottom: 10px;
+}
+
+.m-t-60 {
+  margin-top:60px !important;
+}
+
+.margin-0-auto {
+  margin: 0 auto;
+}
+
+.m-l-30 {
+  margin-left: 30px;
 }
 
 .cards-home {
