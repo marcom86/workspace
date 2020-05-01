@@ -10,4 +10,7 @@ class PagesController < ApplicationController
 
   def list
   end
+
+  def privacy
+  end
 end
