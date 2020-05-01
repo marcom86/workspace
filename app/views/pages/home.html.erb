@@ -75,7 +75,7 @@
 
 
 <div class="best-spaces">
-  <h2 class="bold m-b-50 m-t-50 text-align-center">Coolest Spaces</h2>
+  <h2 class="bold m-b-50 m-t-50 text-align-center">Trendy Spaces</h2>
 
   <div class="cards-home best-spaces m-b-50">
 
@@ -89,7 +89,7 @@
             <p><%= space.city %></p>
           </div>
         </div>
-        <p class="card-text"><%= link_to "", space_path(space), class: "stretched-link details" %></p>
+        <p class="card-text"><%= link_to "", new_space_booking_path(space), class: "stretched-link details" %></p>
       </div>
     <%end%>
 

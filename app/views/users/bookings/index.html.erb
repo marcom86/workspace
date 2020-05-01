@@ -14,18 +14,18 @@
         <div class="dropdown-menu dropdown-menu-right sort" aria-labelledby="dropdownMenuButton">
           <div class="sort m-t-15 m-l-10 m-r-10">
             <i class="fas fa-sort-amount-down-alt"></i>
-            <%= link_to "Booking date: ASC", sort: :asc %>
+            <%= link_to "Booking date: ASC", sort: :desc %>
           </div>
           <div class="sort m-t-15 m-b-15 m-l-10 m-r-10">
             <i class="fas fa-sort-amount-down"></i>
-            <%= link_to "Booking date: DESC", sort: :desc %>
+            <%= link_to "Booking date: DESC", sort: :asc %>
           </div>
 
          <!--  <a class="dropdown-item" href="#"> desc</a> -->
         </div>
       </div>
 
-      <% @bookings.each do |booking| %>
+      <% @bookings.reverse.each do |booking| %>
       <div class="card mb-3">
         <div class="row no-gutters">
           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">

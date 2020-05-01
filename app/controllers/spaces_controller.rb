@@ -33,10 +33,6 @@ class SpacesController < ApplicationController
   end
 
   def show
-    @space = Space.find(params[:id])
-    @booking = Booking.new
-    @query1 = session[:query1]
-    @query2 = session[:query2]
   end
 
   def new

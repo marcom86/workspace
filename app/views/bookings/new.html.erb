@@ -11,13 +11,12 @@
       <div class="reservation-form p-l-20 p-r-20 justify-content-center">
         <h5 class="bold m-t-30 m-b-30"><%= @space.address %></h5>
 
-        <%= form_with(model: [@space, @booking], local: true) do |f| %>
-        <%= label_tag :check_in, "Check in" %>
-        <%= f.date_field :check_in, value: @query1, class: "form-control" %>
-        <%= label_tag :check_out, "Check out", class: "m-t-25" %>
-        <%= f.date_field :check_out, value: @query2, class: "form-control" %>
-
-        <%= submit_tag "Reserve", class: "btn btn-primary btn-lg btn-block m-t-20 m-b-30" %>
+        <%= simple_form_for [ @space, @booking ] do |f| %>
+          <%= f.error_notification %>
+          <%= f.error :base, class: "field-with-errors" %>
+          <%= f.input :check_in %>
+          <%= f.input :check_out %>
+          <%= f.submit "Reserve", class: "btn btn-primary btn-lg btn-block m-t-20 m-b-30" %>
         <% end %>
 
       </div>
@@ -34,9 +33,3 @@
   </div>
 
 </div>
-
-
-
-
-
-
