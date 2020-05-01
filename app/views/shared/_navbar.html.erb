@@ -10,12 +10,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto m-l-10">
       <% if user_signed_in? %>
-        <!-- <li class="nav-item">
+        <li class="nav-item">
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "List with Us", list_path, class: "nav-link" %>
-        </li> -->
+        </li>
           <li class="nav-item">
           <%= link_to "Your Booking", user_bookings_path, class: "nav-link d-block d-sm-none" %>
         </li>
@@ -33,12 +33,12 @@
           </div>
         </li>
       <% else %>
-        <!-- <li class="nav-item">
+        <li class="nav-item">
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "List with Us", list_path, class: "nav-link" %>
-        </li> -->
+        </li>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
