@@ -2,6 +2,8 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :space
   monetize :amount_cents
+  validates :check_in, presence: true
+  validates :check_out, presence: true
   validate :validate_today_greater_check_in
   validate :validate_check_out_greater_check_in
   validate :validate_other_booking_overlap
@@ -20,13 +22,17 @@ class Booking < ApplicationRecord
   private
 
   def validate_today_greater_check_in
-    is_greater = DateTime.current.to_date > check_in
-    errors.add(:check_in, "cannot be in the past") if is_greater
+    if check_in.present? && check_out.present?
+      is_greater = DateTime.current.to_date > check_in
+      errors.add(:check_in, "cannot be in the past") if is_greater
+    end
   end
 
   def validate_check_out_greater_check_in
-    is_greater = check_in > check_out
-    errors.add(:check_in, "cannot be greater than check-out") if is_greater
+    if check_in.present? && check_out.present?
+      is_greater = check_in > check_out
+      errors.add(:check_in, "cannot be greater than check-out") if is_greater
+    end
   end
 
   def validate_other_booking_overlap
