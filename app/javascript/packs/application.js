@@ -6,11 +6,13 @@ require("channels")
 import "bootstrap";
 
 import { initMapbox } from '../plugins/init_mapbox';
-import { scroll } from '../pages/scroll';
+import { scroll, scrollUpTutorial, scrollUpNewSpaces } from '../pages/scroll';
 
 
 initMapbox();
 scroll();
+scrollUpTutorial();
+scrollUpNewSpaces();
 
 
 
