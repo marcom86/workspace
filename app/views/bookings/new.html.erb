@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@space.address} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @space.description %>
+<% content_for :meta_image, cl_image_path(@space.photo.path) %>
+
 <div class="container">
 
   <h2 class="bold m-t-30 m-b-20"><%= @space.address %></h2>

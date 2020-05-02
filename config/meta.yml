@@ -1,0 +1,10 @@
+meta_product_name: "Workspace"
+meta_title: "Workspace - On-demand"
+meta_description: "Workspace is the first platform that
+provides shared workspaces on-demand."
+
+# should exist in `app/assets/images/`
+# meta_image: "cover.png"
+
+# required for Twitter Cards
+# twitter_account: "@product_twitter_account"
