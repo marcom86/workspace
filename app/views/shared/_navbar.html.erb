@@ -1,72 +1,3 @@
-<!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "Workspace", root_path, class: "navbar-brand" %>
-
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto m-l-10">
-      <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to "About", about_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "List with Us", list_path, class: "nav-link" %>
-        </li>
-          <li class="nav-item">
-          <%= link_to "Your Booking", user_bookings_path, class: "nav-link d-block d-sm-none" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link d-block d-sm-none" %>
-        </li>
-        <li class="nav-item dropdown">
-
-          <a class="btn d-none d-sm-block" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-user"></i>
-          </a>
-
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Your Bookings", user_bookings_path, class: "dropdown-item light-grey" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item light-grey" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "About", about_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "List with Us", list_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "Workspace", root_path, class: "navbar-brand" %>
 
@@ -83,7 +14,7 @@
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "List with Us", new_space_path, class: "nav-link" %>
+          <%= link_to "List with Us", list_path, class: "nav-link" %>
         </li>
           <li class="nav-item">
           <%= link_to "Your Booking", user_bookings_path, class: "nav-link d-block d-sm-none" %>
@@ -98,7 +29,6 @@
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Your Bookings", user_bookings_path, class: "dropdown-item light-grey" %>
-            <%= link_to "Another action", "#", class: "dropdown-item light-grey" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item light-grey" %>
           </div>
         </li>
@@ -107,7 +37,7 @@
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "List with Us", new_space_path, class: "nav-link" %>
+          <%= link_to "List with Us", list_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
@@ -116,4 +46,59 @@
     </ul>
   </div>
 </div>
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to "Workspace", root_path, class: "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <% if user_signed_in? %>
+
+    <ul class="navbar-nav ml-auto p-l-10">
+      <li class="nav-item">
+        <%= link_to "About", about_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "List with Us", list_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Your Booking", user_bookings_path, class: "nav-link d-block d-sm-none" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link d-block d-sm-none" %>
+      </li>
+      <li class="nav-item dropdown">
+
+        <a class="btn d-none d-sm-block" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-user"></i>
+        </a>
+
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Your Bookings", user_bookings_path, class: "dropdown-item light-grey" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item light-grey" %>
+        </div>
+      </li>
+    </ul>
+
+    <% else %>
+    <ul class="navbar-nav ml-auto p-l-10">
+      <li class="nav-item">
+        <%= link_to "About", about_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "List with Us", list_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
+    </ul>
+    <% end %>
+  </ul>
+</div>
+</nav>
 
