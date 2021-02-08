@@ -21,7 +21,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'omniauth-facebook'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'cloudinary', '~> 1.12.0'
 gem 'geocoder'
 
